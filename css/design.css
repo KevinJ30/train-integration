@@ -32,6 +32,21 @@ section header {
  * Sidebar
  **/
 
+.nav-button {
+    position:absolute;
+    top: 32px; left: 32px;
+    z-index:2000;
+    transition:left .5s ease-in-out; 
+}
+
+.nav-button.visible {
+    left:332px;
+}
+
+.nav-button button {
+    background:rgba(26, 181, 179, 0.7);
+}
+
 .sidebar section {
     padding:12px 0;
     border-bottom:1px solid #1e282b;
@@ -56,15 +71,21 @@ section header {
     text-decoration:none;
 }
 
+.sidebar.visible {
+    transform: translateX(0);
+}
+
 .sidebar {
     position: fixed;
-    width:16%;
+    width:300px;
     height:100vh;
     background-color:var(--bgr-color);
     box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.60);
     text-align:right;
     overflow-y: auto;
     z-index:1000;
+    transform: translateX(-300px);
+    transition:transform  .5s ease-in-out;
 }
 
 .sidebar .sidebar__logo {
@@ -102,10 +123,6 @@ section header {
     border-bottom:1px solid #169291;
 }
 
-.sidebar .sidebar__filter span.icon  {
-    transform: translateY(6px);
-}
-
 .sidebar .sidebar__filter li a {
     display:block;
     padding: 8px 24px;
@@ -131,10 +148,12 @@ section header {
 /**
  * END
  **/
-
+.page__content.visible {
+    margin-left: 300px;
+}
 .page__content {
-    width:calc(100% - 16%);
-    margin-left:16%;
+    margin-left:0;
+    transition:margin .5s ease-in-out;
 }
 
 .page__content img {
@@ -146,7 +165,7 @@ section header {
  **/
 .works {
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
 }
 
 .work {
@@ -157,7 +176,7 @@ section header {
 
 .work:hover .work__hover {
     opacity:1;
-    background:rgba(26, 181, 179, 0.7)
+    background:rgba(26, 181, 179, 0.7);
 }
 
 .work__img img {
@@ -307,9 +326,40 @@ section header {
     padding: 16px 32px;
     background:#1ab5b3;
     border:none;
+    color:#fff;
     transition:background-color .3s;
+    cursor:pointer;
 }
 
 .btn:hover {
     background:#18aba8;
+}
+
+/**
+ * Responsive
+ **/
+ @media screen and (max-width: 1500px) {
+    .works {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .works {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .page__content {
+        margin-left:0;
+    }
+
+    .sidebar {
+        transform: translateX(-300px);
+    }
+    .works {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
