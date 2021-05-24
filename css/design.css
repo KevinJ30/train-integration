@@ -219,6 +219,12 @@ section header {
     font-size:1.3em;
     font-weight: 200;
     z-index:1000;
+    transform: translateX(100%);
+    transition:transform .5s ease-in-out;
+}
+
+.informations.visible {
+    transform: translateX(0);
 }
 
 .inforamtions_button .btn {
@@ -301,4 +307,9 @@ section header {
     padding: 16px 32px;
     background:#1ab5b3;
     border:none;
+    transition:background-color .3s;
+}
+
+.btn:hover {
+    background:#18aba8;
 }
