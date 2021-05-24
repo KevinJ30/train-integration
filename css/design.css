@@ -1,0 +1,247 @@
+/**
+ * Vars
+ **/
+:root {
+    --bgr-color: #242b2e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin:0; padding: 0;
+    font-size:12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+}
+
+img {
+    display:block;
+}
+
+section header {
+    padding:0 24px;
+    color:#1ab5b3;
+    font-size:1.5em;
+    text-align: right;
+}
+
+
+/**
+ * Sidebar
+ **/
+
+.sidebar section {
+    padding:12px 0;
+    border-bottom:1px solid #1e282b;
+}
+
+.sidebar section header {
+    padding:0 24px;
+    padding-bottom:11px;
+    color:#1ab5b3;
+    font-size:1.5em;
+    text-align: right;
+}
+
+.sidebar ul {
+    margin: 0; padding:0;
+    list-style: none;
+    text-align: right;
+}
+
+.sidebar, a {
+    color:#fff;
+    text-decoration:none;
+}
+
+.sidebar {
+    position: fixed;
+    width:16%;
+    height:100vh;
+    background-color:var(--bgr-color);
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.60);
+    text-align:right;
+    overflow-y: auto;
+    z-index:1000;
+}
+
+.sidebar .sidebar__logo {
+    display:flex;
+    justify-content:center;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+
+    height:123px;
+    background: #fff;
+}
+
+.sidebar .sidebar__nav {
+    padding-top:0;
+}
+
+.sidebar .sidebar__nav ul li.nav__item a {
+    display:block;
+    padding:24px;
+    background: linear-gradient(#333b3f, #31383c, #2e363a);
+    border-bottom:1px solid #293034;
+    font-size:1.5em;
+    text-transform: uppercase;
+    text-align:right;
+    transition:opacity .3s ease-in-out;
+}
+
+.sidebar .sidebar__nav ul li.nav__item a:hover {
+    opacity:0.7;
+}
+
+.sidebar .sidebar__nav ul li.nav__item a.active {
+    background: linear-gradient(#31bcba, #18a3a1);
+    border-bottom:1px solid #169291;
+}
+
+.sidebar .sidebar__filter span.icon  {
+    transform: translateY(6px);
+}
+
+.sidebar .sidebar__filter li a {
+    display:block;
+    padding: 8px 24px;
+    color:#6b7072;
+}
+
+.sidebar .sidebar__filter li a.active {
+    color:#fff;
+}
+
+.sidebar .sidebar__filter li a:hover {
+    color:#fff;
+}
+
+.sidebar .sidebar__filter li a:first-child {
+    padding-top:0;
+}
+
+.sidebar .sidebar__socials, .sidebar .sidebar__copyright{
+    padding:12px 24px;
+}
+
+/**
+ * END
+ **/
+
+.page__content {
+    width:calc(100% - 16%);
+    margin-left:16%;
+}
+
+.page__content img {
+    width:100%;
+}
+
+/**
+ * Works
+ **/
+.works {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.work {
+    height:350px;
+    position:relative;
+    cursor:pointer;
+}
+
+.work:hover .work__hover {
+    opacity:.9;
+}
+
+.work__img img {
+    display:inline-block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.work__img {
+    height:100%;
+}
+
+.work .work__hover {
+    position:absolute;
+    padding:46px;
+    width: 100%; height:100%;
+    top: 0; left: 0;
+    opacity:0;
+    background-color:#1ab5b3;
+    z-index:1000;
+    transition:opacity .3s;
+    color:#fff;
+    text-align: center;
+}
+
+.work .work__hover .icon {
+    width:60px;
+    height:60px;
+}
+
+.work__hover h2 {
+    margin: 0; padding: 0;
+    font-size:2em; font-weight:300; 
+}
+
+.work__hover p {
+    padding-bottom:16px;
+    display:inline-block;
+    border-bottom:1px solid #fff;
+}
+
+/**
+ * ICONS
+ **/
+.icon {
+    display:inline-block;
+    width:24px; height:24px;
+    z-index:1000;
+}
+
+.icon.icon-flickr {
+    background: url('../img/flickr.png');
+}
+
+.icon.icon-googleplus {
+    background: url('../img/googleplus.png');
+}
+
+.icon.icon-twitter {
+    background: url('../img/twitter.png');
+}
+
+.icon.icon-pinterest {
+    background: url('../img/pinterest.png');
+}
+
+.icon.icon-dribbble {
+    background: url('../img/dribbble.png');
+}
+
+.icon.icon-behance {
+    background: url('../img/behance.png');
+}
+
+.icon.icon-facebook {
+    background: url('../img/facebook.png');
+}
+
+.icon.icon-arrow {
+    background: url('../img/icon_arrow.png') no-repeat;
+}
+
+.icon.icon-grid-fill {
+    background: url('../img/icon_grid-fill.png') no-repeat;
+    background-size:14px 14px;
+    background-position: center;
+}
