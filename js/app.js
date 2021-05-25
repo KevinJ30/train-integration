@@ -20,4 +20,19 @@
 
     button_inforamtion.addEventListener('click', onClickButtonInformation);
     button_sidebar.addEventListener('click', onClickButtonSidebar);
+
+    window.addEventListener('resize', () => {
+        const window_size_x = window.innerWidth;
+
+        if(window_size_x > 900) {
+            button_sidebar.parentNode.classList.add('visible');
+            sidebar_element.classList.add('visible');
+            content_element.classList.add('visible');
+        }
+        else {
+            button_sidebar.parentNode.classList.remove('visible');
+            sidebar_element.classList.remove('visible');
+            content_element.classList.remove('visible');
+        }
+    })
 })()
